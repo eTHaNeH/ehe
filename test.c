@@ -46,9 +46,6 @@ int getche(void)
 
 int main(void)
 {
-	unsigned int a = 2;
-	int b = -2;
-
 	char c;
 
 	c = getch();
