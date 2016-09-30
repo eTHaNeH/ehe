@@ -41,6 +41,6 @@ int main(void)
 	c = getch();
 	if(c == '?') printf("help\r\n");
 
-	return 1;
+	return 0;
 }
 
