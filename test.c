@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <termios.h>
 #include <unistd.h>
-//#include <curses.h>
 
 typedef unsigned int u32;
 
