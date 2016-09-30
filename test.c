@@ -6,15 +6,6 @@
 #include <termios.h>
 #include <unistd.h>
 
-typedef unsigned int u32;
-
-typedef struct {
-	u32 a;
-	u32 b;
-}Arr;
-
-void printArr(Arr *arr);
-
 /* reads from keypress, doesn't echo */
 char getch(void)
 {
