@@ -9,38 +9,38 @@
 /* reads from keypress, doesn't echo */
 char getch(void)
 {
-	struct termios oldattr, newattr;
-	char ch;
-	tcgetattr( STDIN_FILENO, &oldattr );
-	newattr = oldattr;
-	newattr.c_lflag &= ~( ICANON | ECHO );
-	tcsetattr( STDIN_FILENO, TCSANOW, &newattr );
-	ch = getchar();
-	tcsetattr( STDIN_FILENO, TCSANOW, &oldattr );
-	return ch;
+    struct termios oldattr, newattr;
+    char ch;
+    tcgetattr( STDIN_FILENO, &oldattr );
+    newattr = oldattr;
+    newattr.c_lflag &= ~( ICANON | ECHO );
+    tcsetattr( STDIN_FILENO, TCSANOW, &newattr );
+    ch = getchar();
+    tcsetattr( STDIN_FILENO, TCSANOW, &oldattr );
+    return ch;
 }
 
 /* reads from keypress, echoes */
 int getche(void)
 {
-	struct termios oldattr, newattr;
-	int ch;
-	tcgetattr( STDIN_FILENO, &oldattr );
-	newattr = oldattr;
-	newattr.c_lflag &= ~( ICANON );
-	tcsetattr( STDIN_FILENO, TCSANOW, &newattr );
-	ch = getchar();
-	tcsetattr( STDIN_FILENO, TCSANOW, &oldattr );
-	return ch;
+    struct termios oldattr, newattr;
+    int ch;
+    tcgetattr( STDIN_FILENO, &oldattr );
+    newattr = oldattr;
+    newattr.c_lflag &= ~( ICANON );
+    tcsetattr( STDIN_FILENO, TCSANOW, &newattr );
+    ch = getchar();
+    tcsetattr( STDIN_FILENO, TCSANOW, &oldattr );
+    return ch;
 }
 
 int main(void)
 {
-	char c;
+    char c;
 
-	c = getch();
-	if(c == '?') printf("help\r\n");
+    c = getch();
+    if(c == '?') printf("help\r\n");
 
-	return 0;
+    return 0;
 }
 
